@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
 const {config, engine} = require('express-edge');
-const {showHomePage} = require('./controllers/PostController');
+const {showHomePage, createPost} = require('./controllers/PostController');
 const db = require('./db');
 app.use(express.static('public'));
 app.use(engine);
 app.set('views', `${__dirname}/views`);
 
 app.get('/', showHomePage);
+app.get("/posts/new", createPost);
 
 
 app.listen(5000, () => {
