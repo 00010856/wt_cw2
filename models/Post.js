@@ -20,7 +20,7 @@ const PostSchema = new Schema({
     image: {
         type: String,
     },
-    createAt: {
+    createdAt: {
         type: Date,
         default: Date.now,
     },
