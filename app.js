@@ -6,7 +6,7 @@ const expressFileUpload = require('express-fileupload');
 const session = require('express-session');
 
 
-const {showHomePage, createPost, storePost, showPost} = require('./controllers/PostController');
+const {showHomePage, createPost, storePost, showPost, deletePost, updatePost} = require('./controllers/PostController');
 const {createUser, storeUser, showLoginPage, loginUser} = require('./controllers/UserController');
 
 const db = require('./db');
@@ -32,10 +32,15 @@ app.get('/', showHomePage);
 app.get("/posts/new", createPost);
 app.post("/posts/store", storePost);
 app.get("/posts/:id", showPost);
+
+app.delete("/posts/:id", deletePost);
+app.post("/posts/:id", updatePost);
+
 app.get("/auth/register", createUser);
 app.post("/auth/register", storeUser);
 app.get("/auth/login", showLoginPage);
 app.post("/auth/login", loginUser);
+
 
 app.listen(5000, () => {
     console.log('Server started on port 5000');
