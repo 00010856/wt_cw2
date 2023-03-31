@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt');
+
 const User = require('../models/User');
 
 const createUser = (req, res) => {
@@ -16,6 +18,30 @@ const storeUser = async (req, res) => {
 
 };
 
+const showLoginPage = async (req, res) => {
+    res.render('login');
+}
+
+const loginUser = async (req, res) => {
+    try {
+        const {email, password} = req.body;
+        const user = await User.findOne({email});
+        if (user) {
+            const result = await bcrypt.compare(password, user.password);
+            if (result) {
+                req.session.userId = user._id;
+                res.redirect('/');
+            } else {
+                res.redirect('/auth/login');
+            }
+        }else{
+            res.redirect('/auth/login');
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 module.exports = {
-    createUser, storeUser
+    createUser, storeUser, showLoginPage, loginUser
 };
