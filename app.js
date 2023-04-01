@@ -4,6 +4,7 @@ const app = express();
 const {config, engine} = require('express-edge');
 const expressFileUpload = require('express-fileupload');
 const session = require('express-session');
+const methodOverride = require('method-override');
 
 
 const {showHomePage, createPost, storePost, showPost, deletePost, updatePost} = require('./controllers/PostController');
@@ -15,6 +16,7 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(expressFileUpload());
 app.use(express.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
 
 
 app.use(engine);

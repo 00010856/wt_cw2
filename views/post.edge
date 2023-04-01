@@ -18,11 +18,15 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     {{post.content}}
-                    <form method="POST" action="/posts/{{post._id}}">
-                        <input type = "hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-danger mt-3">Delete</button>
-                    </form>
                 </div>
             </div>
         </div>
+
+        <form action="/posts/{{ post._id }}" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <div class="form-group my-4 text-center">
+                <button class="btn btn-primary">Delete</button>
+            </div>
+        </form>
+
 @endsection
