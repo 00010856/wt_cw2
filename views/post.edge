@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <form action="/posts/{{ post._id }}" method="POST">
+        <form action="/posts/{{ post._id }}" method="POST"encType="multipart/form-data">
             <input type="hidden" name="_method" value="DELETE">
             <div class="form-group my-4 text-center">
                 <button class="btn btn-primary">Delete</button>

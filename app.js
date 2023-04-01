@@ -35,7 +35,7 @@ app.get("/posts/new", createPost);
 app.post("/posts/store", storePost);
 app.get("/posts/:id", showPost);
 
-app.delete("/posts/:id", deletePost);
+app.post("/posts/:id", deletePost);
 app.post("/posts/:id", updatePost);
 
 app.get("/auth/register", createUser);

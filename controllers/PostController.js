@@ -44,7 +44,7 @@ const updatePost = async (req, res) => {
         }
 
         await Post.findByIdAndUpdate(req.params.id, postData);
-        res.redirect(`/posts/${req.params.id}`);
+        res.redirect('`/posts/${req.params.id}`');
     } catch (error) {
         console.log(error);
     }
@@ -55,7 +55,7 @@ const deletePost = async (req, res) => {
         console.log(req.params.id);
         const post = await Post.findById(req.params.id);
         console.log(post);
-        await post.remove();
+        await post.deleteOne();
         console.log('Post deleted');
         res.redirect('/');
     } catch (error) {
