@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # WT blog :  blog web application for WT CW2
 
 
