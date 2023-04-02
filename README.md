@@ -1,7 +1,7 @@
 # WT blog :  blog web application for WT CW2
 
 
-## This application allows user to write and upload the blog with title, username, description, content and image. User can also delete and read the blog and list of blogs that is published. User can also register their account.
+## This application allows user to write and upload the blog with title, username, description, content and image. User can also delete and read the blog and list of blogs that is published. User can also register their account. User need authentication to create new post, so register and log in first!
 
 ### To run this web application locally follow step-by-step instruction below
 
