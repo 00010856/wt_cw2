@@ -18,7 +18,7 @@
    ```
 
    ```bash
-   npm install
+   npm install or node app
    ```
 
 3. Run the application
@@ -35,5 +35,3 @@
 ### Link to the github remote repository
 [Github repostiory](https://github.com/00010856/wt_cw2.git)
 
-### Online access to the web application
-[Glitch deployment](https://00010856wtcw2.glitch.me/)
